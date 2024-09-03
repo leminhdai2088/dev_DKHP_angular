@@ -29,7 +29,6 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
         BsDropdownModule
     ],
     declarations: [
-
        DashboardComponent
     ],
     providers: [

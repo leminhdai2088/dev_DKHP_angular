@@ -7,10 +7,15 @@ import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { AppRoutingModule } from "./app-routing.module";
+import { SideBarMenuModule } from "./admin/core/ultils/CommonDeclarationModule";
+import { DefaultLayoutComponent } from "./share/layout/themes/default/default-layout.component";
+import { FooterComponent } from "./share/layout/footer.component";
 
 @NgModule({
     declarations: [
         AppComponent,
+        DefaultLayoutComponent,
+        FooterComponent
     ],
     imports: [
         ngCommon.CommonModule,
@@ -19,7 +24,8 @@ import { AppRoutingModule } from "./app-routing.module";
         TooltipModule.forRoot(),
         TabsModule.forRoot(),
         BsDropdownModule.forRoot(),
-        AppRoutingModule
+        AppRoutingModule,
+        SideBarMenuModule
     ],
     providers: [],
 

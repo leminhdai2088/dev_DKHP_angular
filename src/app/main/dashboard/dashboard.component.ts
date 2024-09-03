@@ -1,11 +1,21 @@
-import { AfterViewInit, Injector } from "@angular/core";
+import { AfterViewInit, Component, Injector, OnInit, ViewEncapsulation } from "@angular/core";
+import { appModuleAnimation } from "../../../shared/animations/routerTransition";
 
-export class DashboardComponent implements AfterViewInit{
+@Component({
+    templateUrl: './dashboard.component.html',
+    encapsulation: ViewEncapsulation.None,
+    animations: [appModuleAnimation()]
+})
+export class DashboardComponent implements AfterViewInit, OnInit {
     constructor(
         injector: Injector
     ){
     }
+    ngOnInit(): void {
+        console.log("DashboardComponent");
+        
+    }
     ngAfterViewInit(): void {
-        throw new Error("Method not implemented.");
+        console.log("DashboardComponent");
     }
 }

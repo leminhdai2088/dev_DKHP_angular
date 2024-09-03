@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+	templateUrl: './app.component.html',
+	encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-  title = 'dev_DKHP_angular';
+export class AppComponent  implements OnInit, AfterViewInit {
+  ngOnInit(): void {
+    console.log("Init");
+    
+  }
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit");
+    
+  }
 }
