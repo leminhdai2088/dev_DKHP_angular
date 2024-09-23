@@ -7,6 +7,10 @@ import { ServiceProxyModule } from "../shared/service-proxies/service-proxy.modu
 import { AccountRoutingModule } from "./account-routing.module";
 import { AccountComponent } from "./account.component";
 import { LoginComponent } from "./login/login.component";
+import { commonImportModule } from "../app/admin/core/ultils/CommonDeclarationModule";
+import { CookieService } from 'ngx-cookie-service';
+import { LoginService } from "./login/login.service";
+import { TokenAuthServiceProxy } from "../shared/service-proxies/service-proxies";
 @NgModule({
     imports: [
         ngCommon.CommonModule,
@@ -16,13 +20,15 @@ import { LoginComponent } from "./login/login.component";
         ServiceProxyModule,
         AccountRoutingModule,
         // OAuthModule.forRoot()
+        commonImportModule
     ],
     declarations: [
         AccountComponent,
         LoginComponent
     ],
     providers: [
-        // LoginService,
+        CookieService,
+        LoginService,
         // AccountRouteGuard
     ]
 })

@@ -8,6 +8,9 @@ import { PopoverModule } from "ngx-bootstrap/popover";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { AdminRoutingModule } from "./admin-routing.module";
+import { CommonDeclarationDeclarationModule, commonImportModule } from "./core/ultils/CommonDeclarationModule";
+import { ClassListComponent } from "./class/class-list.component";
+import { ClassEditComponent } from "./class/class-edit.component";
 
 @NgModule({
     imports: [
@@ -20,10 +23,12 @@ import { AdminRoutingModule } from "./admin-routing.module";
         PopoverModule.forRoot(),
         BsDropdownModule.forRoot(),
         BsDatepickerModule.forRoot(),
-        AdminRoutingModule
+        AdminRoutingModule,
+        CommonDeclarationDeclarationModule,
+        commonImportModule
     ],
     declarations:[
-
+        ClassListComponent, ClassEditComponent
     ]
 })
 export class AdminModule { }

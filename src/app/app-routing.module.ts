@@ -1,6 +1,7 @@
 import { NgModule, ApplicationRef, ChangeDetectorRef } from '@angular/core';
 import { NavigationEnd, RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterModule, Scroll } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AppRouteGuard } from './share/common/auth/auth-route-guard';
 //import { AppRouteGuard } from './shared/common/auth/auth-route-guard';
 //import { NotificationsComponent } from './shared/layout/notifications/notifications.component';
 @NgModule({
@@ -9,8 +10,8 @@ import { AppComponent } from './app.component';
             {
                 path: 'app',
                 component: AppComponent,
-                //canActivate: [AppRouteGuard],
-                //canActivateChild: [AppRouteGuard],
+                canActivate: [AppRouteGuard],
+                // canActivateChild: [AppRouteGuard],
                 children: [
                     {
                         path: 'main',
@@ -21,7 +22,7 @@ import { AppComponent } from './app.component';
                         path: 'admin',
                         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
                         data: { preload: true },
-                        // canLoad: [AppRouteGuard]
+                        canLoad: [AppRouteGuard]
                     }, 
                 ]
             }

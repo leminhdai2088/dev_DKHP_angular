@@ -1,1 +1,20 @@
+<div class="card">
 <h1>LOGIN COMPONENT</h1>
+    
+    <form #loginForm="ngForm" method="post" novalidate (ngSubmit)="login()">
+        <div class="flex flex-column md:flex-row">
+            <div class="w-full md:w-5 flex flex-column align-items-center justify-content-center gap-3 py-5">
+                <div class="flex flex-wrap justify-content-center align-items-center gap-2">
+                    <label class="w-6rem">Username</label>
+                    <input pInputText #userNameOrEmailAddressInput="ngModel" [(ngModel)]="loginService.authenticateModel.userNameOrEmailAddress" autofocus name="userNameOrEmailAddressInput" id="userNameOrEmailAddressInput" type="text" class="w-12rem" />
+                </div>
+                <div class="flex flex-wrap justify-content-center align-items-center gap-2">
+                    <label class="w-6rem">Password</label>
+                    <input pInputText #passwordInput="ngModel" name="passwordInput" [(ngModel)]="loginService.authenticateModel.password" [(ngModel)]="inputValue" id="password" type="password" class="w-12rem" />
+                </div>
+                <p-button type="ngSubmit" label="Login" icon="pi pi-user" styleClass="w-10rem mx-auto" />
+            </div>
+        </div>
+    </form>
+</div>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-atom"></ngx-spinner>

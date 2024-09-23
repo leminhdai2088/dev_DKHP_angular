@@ -40,13 +40,13 @@ export class UrlHelper {
         return '';
     }
 
-    static getReturnUrl(): string | null {
+    static getReturnUrl(): string | undefined {
         const queryStringObj = UrlHelper.getQueryParametersUsingParameters(UrlHelper.getInitialUrlParameters());
         if (queryStringObj.returnUrl) {
             return decodeURIComponent(queryStringObj.returnUrl);
         }
 
-        return null;
+        return undefined;
     }
 
     static getSingleSignIn(): boolean {

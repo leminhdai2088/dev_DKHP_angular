@@ -24,7 +24,7 @@ export class AppConsts {
     };
 
     static readonly authorization = {
-        encrptedAuthTokenName: 'enc_auth_token'
+        authTokenName: 'auth_token'
     };
 
     static readonly grid = {

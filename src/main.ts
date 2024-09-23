@@ -23,8 +23,10 @@
 // export default bootstrap;
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { RootModule } from './root.module';
-
+import { environment } from './environment/environment';
+import { AppConsts } from './shared/AppConsts';
 const bootstrap = () => {
+  AppConsts.remoteServiceBaseUrl = environment.remoteServiceBaseUrl
   return platformBrowserDynamic().bootstrapModule(RootModule);
 };
 
